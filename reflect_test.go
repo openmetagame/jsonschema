@@ -443,6 +443,7 @@ func TestSchemaGeneration(t *testing.T) {
 		{&CustomSliceOuter{}, &Reflector{}, "fixtures/custom_slice_type.json"},
 		{&CustomMapOuter{}, &Reflector{}, "fixtures/custom_map_type.json"},
 		{&CustomTypeFieldWithInterface{}, &Reflector{}, "fixtures/custom_type_with_interface.json"},
+		{&CustomTypeFieldWithInterface{}, &Reflector{IgnoreCustomTypes: true}, "fixtures/custom_type_with_interface_ignored.json"},
 		{&PatternTest{}, &Reflector{}, "fixtures/commas_in_pattern.json"},
 		{&RecursiveExample{}, &Reflector{}, "fixtures/recursive.json"},
 		{&KeyNamed{}, &Reflector{

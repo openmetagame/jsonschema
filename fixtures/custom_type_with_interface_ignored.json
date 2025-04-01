@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/invopop/jsonschema/custom-type-field-with-interface",
+  "$ref": "#/$defs/CustomTypeFieldWithInterface",
+  "$defs": {
+    "CustomTimeWithInterface": {
+      "additionalProperties": false,
+      "properties": {},
+      "type": "object"
+    },
+    "CustomTypeFieldWithInterface": {
+      "properties": {
+        "CreatedAt": {
+          "$ref": "#/$defs/CustomTimeWithInterface"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "CreatedAt"
+      ]
+    }
+  }
+}

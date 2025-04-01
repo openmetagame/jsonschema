@@ -168,6 +168,9 @@ type Reflector struct {
 	//
 	// See also: AddGoComments, LookupComment
 	CommentMap map[string]string
+
+	// ignore custom type iterfaces
+	IgnoreCustomTypes bool
 }
 
 // Reflect reflects to Schema from a value.
@@ -362,6 +365,10 @@ func (r *Reflector) reflectTypeToSchema(definitions Definitions, t reflect.Type)
 }
 
 func (r *Reflector) reflectCustomSchema(definitions Definitions, t reflect.Type) *Schema {
+	if r.IgnoreCustomTypes {
+		return nil
+	}
+
 	if t.Kind() == reflect.Ptr {
 		return r.reflectCustomSchema(definitions, t.Elem())
 	}
