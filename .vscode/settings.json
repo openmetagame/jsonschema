@@ -1,0 +1,13 @@
+{
+    "editor.formatOnSave": true,
+    "eslint.format.enable": true,
+    "go.delveConfig": {
+        "dlvLoadConfig": {
+            "maxStringLen": 8192
+        }
+    },
+    "go.coverOnSave": true,
+    "go.coverageOptions": "showUncoveredCodeOnly",
+    "go.useLanguageServer": true,
+    "go.buildOnSave": "off",
+}
